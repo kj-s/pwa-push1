@@ -1,6 +1,13 @@
 <html>
  
  <head>
+  
+  <script>if ('serviceWorker' in navigator) {
+     navigator.serviceWorker.register('/firebase-messaging-sw.js', 
+      {scope:'/'}
+     );}
+  </script>
+  
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-messaging.js"></script>
   <script type="text/javascript" src="/app.js"></script>
@@ -14,7 +21,7 @@
   <br><br>
   <div id="mytoken">{mytoken is ..}</div>
   <br>
-  <button onclick="document.getElementById('mytoken').innerHTML = mytoken;">トークンを表示</button>
+  <button onclick="document.getElementById('mytoken').innerHTML = mytoken;">Show Token</button>
   
  </body>
  
