@@ -1,3 +1,5 @@
+  var mytoken;
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyB3jpH8YL5Iqh_EmAMfBmNBrzGSJ7N57wk",
@@ -20,7 +22,7 @@
   .then(function(token){
   //あとでcurlコマンドにセットするデバイストークンを出力します
     console.log(token);
-    $("#mytoken").InnerText="token";
+    mytoken = token;
   })
   .catch(function(err){
     console.log('error Occuerd at getpermission');
