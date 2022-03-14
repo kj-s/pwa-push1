@@ -29,9 +29,9 @@ importScripts("https://www.gstatic.com/firebasejs/6.3.4/firebase-messaging.js");
  * foreground時にメッセージを受け取ると、通知をする。通知の中身はtitleやoptionから設定できる。
  */
 self.addEventListener("push", function(event) {
-  const title = "Web担当者の休日";
+  const title = "WebPushテスト";
   const options = {
-    body: "新しい記事が公開されました。[push]",
+    body: "イベントリスナーから発火[push]",
     // 通知の右にでる画像
     icon:
       "",
