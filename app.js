@@ -20,6 +20,7 @@
   .then(function(token){
   //あとでcurlコマンドにセットするデバイストークンを出力します
     console.log(token);
+    $("mytoken").text(token);
   })
   .catch(function(err){
     console.log('error Occuerd at getpermission');
