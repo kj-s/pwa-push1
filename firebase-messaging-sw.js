@@ -21,9 +21,17 @@ importScripts("https://www.gstatic.com/firebasejs/6.3.4/firebase-messaging.js");
   //  appId: "アプリID"
   //};
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const messaging = firebase.messaging();
+  //firebase.initializeApp(firebaseConfig);
+  //const messaging = firebase.messaging();
+  var messaging;
 
+/**
+ * firebaseのイニシャライズは操作で発火させる。。
+ */
+function initFirebase() {
+  firebase.initializeApp(firebaseConfig);
+  messaging = firebase.messaging();
+}
 
 /**
  * foreground時にメッセージを受け取ると、通知をする。通知の中身はtitleやoptionから設定できる。
