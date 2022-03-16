@@ -1,4 +1,5 @@
   var mytoken;
+  var messaging;
 
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -9,7 +10,11 @@
     messagingSenderId: "152433524238",
     appId: "1:152433524238:web:0eb5981312e6e5ae0b465f"
   };
+
+
   // Initialize Firebase
+function initFirebase() {
+  
   firebase.initializeApp(firebaseConfig);
   const messaging = firebase.messaging();
 
@@ -35,5 +40,16 @@
   messaging.usePublicVapidKey("BJ8oAnd0vfTGgqPLafv926ypQGSSVWzB-pAnjS6NMnIwuqJP4m2e-DHL6IlIGuew5HsSYg2aZVp8dbvwDR1Ldo0");
   messaging.onMessage(function(payload){
     console.log('onMessage:',payload);
+    const notificationTitle = payload.notification.title;
+    const notificationOptions = {
+      body: payload.notification.body,
+      icon: payload.notification.icon
+    };
+  
+    return self.registration.showNotification(
+      notificationTitle,
+      notificationOptions
+    );
   });
 
+}
