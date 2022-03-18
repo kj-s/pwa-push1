@@ -37,19 +37,10 @@ function initFirebase() {
     console.log(token);
   });
 
+}
+
   messaging.usePublicVapidKey("BJ8oAnd0vfTGgqPLafv926ypQGSSVWzB-pAnjS6NMnIwuqJP4m2e-DHL6IlIGuew5HsSYg2aZVp8dbvwDR1Ldo0");
   messaging.onMessage(function(payload){
     console.log('onMessage:',payload);
-    const notificationTitle = payload.notification.title;
-    const notificationOptions = {
-      body: payload.notification.body,
-      icon: payload.notification.icon
-    };
-  
-    return self.registration.showNotification(
-      notificationTitle,
-      notificationOptions
-    );
   });
 
-}
